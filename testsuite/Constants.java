@@ -1,0 +1,313 @@
+
+/** Java test suite for Javel.
+    Test constants (numbers and strings), aconst_null, ldc, getstatic,
+    putstatic, getfield, putfield. */
+
+public class Constants {
+
+	public static int m1;
+	public int m2;
+	public final static int i1 = 0;
+	public final static int i2 = 2147483647;
+	public final static int i3 = -2343487;
+	public final static int i4 = -1;
+	public final static long l1 = 0L;
+	public final static long l2 = 9223372036854775807L;
+	public final static long l3 = -343544593654353L;
+	public final static long l4 = -1L;
+	public final static float f1 = 0.0f;
+	public final static float f2 = 1.0f;
+	public final static float f3 = -1.0f;
+	public final static float f4 = 1.0f/0.0f;
+	public final static float f5 = -1.0f/0.0f;
+	public final static float f6 = 0.0f/0.0f;
+	public final static float f7 = 9.394823428f;
+	public final static float f8 = 2.239082367e+34f;
+	public final static float f9 = 6.698856142e-23f;
+
+	/** We need a long long long list to test ldc_w which
+	    use a 2-byte index. */
+	public final static long fill1 = 0L;
+	public final static long fill2 = 0L;
+	public final static long fill3 = 0L;
+	public final static long fill4 = 0L;
+	public final static long fill5 = 0L;
+	public final static long fill6 = 0L;
+	public final static long fill7 = 0L;
+	public final static long fill8 = 0L;
+	public final static long fill9 = 0L;
+	public final static long fill10 = 0L;
+	public final static long fill11 = 0L;
+	public final static long fill12 = 0L;
+	public final static long fill13 = 0L;
+	public final static long fill14 = 0L;
+	public final static long fill15 = 0L;
+	public final static long fill16 = 0L;
+	public final static long fill17 = 0L;
+	public final static long fill18 = 0L;
+	public final static long fill19 = 0L;
+	public final static long fill20 = 0L;
+	public final static long fill21 = 0L;
+	public final static long fill22 = 0L;
+	public final static long fill23 = 0L;
+	public final static long fill24 = 0L;
+	public final static long fill25 = 0L;
+	public final static long fill26 = 0L;
+	public final static long fill27 = 0L;
+	public final static long fill28 = 0L;
+	public final static long fill29 = 0L;
+	public final static long fill30 = 0L;
+	public final static long fill31 = 0L;
+	public final static long fill32 = 0L;
+	public final static long fill33 = 0L;
+	public final static long fill34 = 0L;
+	public final static long fill35 = 0L;
+	public final static long fill36 = 0L;
+	public final static long fill37 = 0L;
+	public final static long fill38 = 0L;
+	public final static long fill39 = 0L;
+	public final static long fill40 = 0L;
+	public final static long fill41 = 0L;
+	public final static long fill42 = 0L;
+	public final static long fill43 = 0L;
+	public final static long fill44 = 0L;
+	public final static long fill45 = 0L;
+	public final static long fill46 = 0L;
+	public final static long fill47 = 0L;
+	public final static long fill48 = 0L;
+	public final static long fill49 = 0L;
+	public final static long fill50 = 0L;
+	public final static long fill51 = 0L;
+	public final static long fill52 = 0L;
+	public final static long fill53 = 0L;
+	public final static long fill54 = 0L;
+	public final static long fill55 = 0L;
+	public final static long fill56 = 0L;
+	public final static long fill57 = 0L;
+	public final static long fill58 = 0L;
+	public final static long fill59 = 0L;
+	public final static long fill60 = 0L;
+	public final static long fill61 = 0L;
+	public final static long fill62 = 0L;
+	public final static long fill63 = 0L;
+	public final static long fill64 = 0L;
+	public final static long fill65 = 0L;
+	public final static long fill66 = 0L;
+	public final static long fill67 = 0L;
+	public final static long fill68 = 0L;
+	public final static long fill69 = 0L;
+	public final static long fill70 = 0L;
+	public final static long fill71 = 0L;
+	public final static long fill72 = 0L;
+	public final static long fill73 = 0L;
+	public final static long fill74 = 0L;
+	public final static long fill75 = 0L;
+	public final static long fill76 = 0L;
+	public final static long fill77 = 0L;
+	public final static long fill78 = 0L;
+	public final static long fill79 = 0L;
+	public final static long fill80 = 0L;
+	public final static long fill81 = 0L;
+	public final static long fill82 = 0L;
+	public final static long fill83 = 0L;
+	public final static long fill84 = 0L;
+	public final static long fill85 = 0L;
+	public final static long fill86 = 0L;
+	public final static long fill87 = 0L;
+	public final static long fill88 = 0L;
+	public final static long fill89 = 0L;
+	public final static long fill90 = 0L;
+	public final static long fill91 = 0L;
+	public final static long fill92 = 0L;
+	public final static long fill93 = 0L;
+	public final static long fill94 = 0L;
+	public final static long fill95 = 0L;
+	public final static long fill96 = 0L;
+	public final static long fill97 = 0L;
+	public final static long fill98 = 0L;
+	public final static long fill99 = 0L;
+	public final static long fill100 = 0L;
+	public final static long fill101 = 0L;
+	public final static long fill102 = 0L;
+	public final static long fill103 = 0L;
+	public final static long fill104 = 0L;
+	public final static long fill105 = 0L;
+	public final static long fill106 = 0L;
+	public final static long fill107 = 0L;
+	public final static long fill108 = 0L;
+	public final static long fill109 = 0L;
+	public final static long fill110 = 0L;
+	public final static long fill111 = 0L;
+	public final static long fill112 = 0L;
+	public final static long fill113 = 0L;
+	public final static long fill114 = 0L;
+	public final static long fill115 = 0L;
+	public final static long fill116 = 0L;
+	public final static long fill117 = 0L;
+	public final static long fill118 = 0L;
+	public final static long fill119 = 0L;
+	public final static long fill120 = 0L;
+	public final static long fill121 = 0L;
+	public final static long fill122 = 0L;
+	public final static long fill123 = 0L;
+	public final static long fill124 = 0L;
+	public final static long fill125 = 0L;
+	public final static long fill126 = 0L;
+	public final static long fill127 = 0L;
+	public final static long fill128 = 0L;
+	public final static long fill129 = 0L;
+	public final static long fill130 = 0L;
+	public final static long fill131 = 0L;
+	public final static long fill132 = 0L;
+	public final static long fill133 = 0L;
+	public final static long fill134 = 0L;
+	public final static long fill135 = 0L;
+	public final static long fill136 = 0L;
+	public final static long fill137 = 0L;
+	public final static long fill138 = 0L;
+	public final static long fill139 = 0L;
+	public final static long fill140 = 0L;
+	public final static long fill141 = 0L;
+	public final static long fill142 = 0L;
+	public final static long fill143 = 0L;
+	public final static long fill144 = 0L;
+	public final static long fill145 = 0L;
+	public final static long fill146 = 0L;
+	public final static long fill147 = 0L;
+	public final static long fill148 = 0L;
+	public final static long fill149 = 0L;
+	public final static long fill150 = 0L;
+	public final static long fill151 = 0L;
+	public final static long fill152 = 0L;
+	public final static long fill153 = 0L;
+	public final static long fill154 = 0L;
+	public final static long fill155 = 0L;
+	public final static long fill156 = 0L;
+	public final static long fill157 = 0L;
+	public final static long fill158 = 0L;
+	public final static long fill159 = 0L;
+	public final static long fill160 = 0L;
+	public final static long fill161 = 0L;
+	public final static long fill162 = 0L;
+	public final static long fill163 = 0L;
+	public final static long fill164 = 0L;
+	public final static long fill165 = 0L;
+	public final static long fill166 = 0L;
+	public final static long fill167 = 0L;
+	public final static long fill168 = 0L;
+	public final static long fill169 = 0L;
+	public final static long fill170 = 0L;
+	public final static long fill171 = 0L;
+	public final static long fill172 = 0L;
+	public final static long fill173 = 0L;
+	public final static long fill174 = 0L;
+	public final static long fill175 = 0L;
+	public final static long fill176 = 0L;
+	public final static long fill177 = 0L;
+	public final static long fill178 = 0L;
+	public final static long fill179 = 0L;
+	public final static long fill180 = 0L;
+	public final static long fill181 = 0L;
+	public final static long fill182 = 0L;
+	public final static long fill183 = 0L;
+	public final static long fill184 = 0L;
+	public final static long fill185 = 0L;
+	public final static long fill186 = 0L;
+	public final static long fill187 = 0L;
+	public final static long fill188 = 0L;
+	public final static long fill189 = 0L;
+	public final static long fill190 = 0L;
+	public final static long fill191 = 0L;
+	public final static long fill192 = 0L;
+	public final static long fill193 = 0L;
+	public final static long fill194 = 0L;
+	public final static long fill195 = 0L;
+	public final static long fill196 = 0L;
+	public final static long fill197 = 0L;
+	public final static long fill198 = 0L;
+	public final static long fill199 = 0L;
+	public final static long fill200 = 0L;
+	public final static long fill201 = 0L;
+	public final static long fill202 = 0L;
+	public final static long fill203 = 0L;
+	public final static long fill204 = 0L;
+	public final static long fill205 = 0L;
+	public final static long fill206 = 0L;
+	public final static long fill207 = 0L;
+	public final static long fill208 = 0L;
+	public final static long fill209 = 0L;
+	public final static long fill210 = 0L;
+	public final static long fill211 = 0L;
+	public final static long fill212 = 0L;
+	public final static long fill213 = 0L;
+	public final static long fill214 = 0L;
+	public final static long fill215 = 0L;
+	public final static long fill216 = 0L;
+	public final static long fill217 = 0L;
+	public final static long fill218 = 0L;
+	public final static long fill219 = 0L;
+	public final static long fill220 = 0L;
+	public final static long fill221 = 0L;
+	public final static long fill222 = 0L;
+	public final static long fill223 = 0L;
+	public final static long fill224 = 0L;
+	public final static long fill225 = 0L;
+	public final static long fill226 = 0L;
+	public final static long fill227 = 0L;
+	public final static long fill228 = 0L;
+	public final static long fill229 = 0L;
+	public final static long fill230 = 0L;
+	public final static long fill231 = 0L;
+	public final static long fill232 = 0L;
+	public final static long fill233 = 0L;
+	public final static long fill234 = 0L;
+	public final static long fill235 = 0L;
+	public final static long fill236 = 0L;
+	public final static long fill237 = 0L;
+	public final static long fill238 = 0L;
+	public final static long fill239 = 0L;
+	public final static long fill240 = 0L;
+	public final static long fill241 = 0L;
+	public final static long fill242 = 0L;
+	public final static long fill243 = 0L;
+	public final static long fill244 = 0L;
+	public final static long fill245 = 0L;
+
+	/** We need a big value for THELASTONE otherwise the compiler
+	    does not use ldc_w but replace it by a simpler s/b/ipush. */
+	public final static int THELASTONE = 1234567890;
+
+	public int f1() {
+		/** aconst_null */
+		Constants c = null;
+		/** ldc, aload, aload_n */
+		String s1 = "Hello";
+		String s2 = s1 + ", world!";
+		String s3 = "ABC";
+		String s4 = "ABC";
+		String s5 = "ABC";
+		/** get/putstatic, get/putfield */
+		Constants.m1 = 2;
+		m2 = 3;
+		int i = m2;
+		return Constants.m1;
+	}
+
+	public int f2() {
+		/** ldc */
+		int i = i2;
+		/** ldc_w */
+		int j = THELASTONE;
+		/** ldc2_w */
+		long k = l2;
+		return 0;
+	}
+
+	public long f3(long l1, long l2) {
+		/** lload, lstore */
+		long l3 = l1;
+		long l4 = l2;
+		long l5 = l3;
+		return l5;
+	}
+}

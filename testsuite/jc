@@ -1,0 +1,3 @@
+#!/bin/sh
+# Compile the file given as argument with jikes.
+jikes -g -classpath /usr/share/kaffe/Klasses.jar $1

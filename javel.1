@@ -1,0 +1,108 @@
+.PU
+.TH JAVEL 1 local
+.SH NAME
+javel \- Disassemble java class file bytecode, output dependencies
+.SH SYNOPSIS
+.ll +8
+.B javel
+[ -b -c -help -l
+ -public|protected|package|private
+ -s -verbose -classpath
+.I "path"
+]
+[ -depend ]
+.I "files ..."
+.SH DESCRIPTION
+.B Javel
+is a java bytecode disassembler and dependency maker.
+Depending on the options, it can output some portions of the
+disassembled code of the specified files to the standard output.
+.B Javel
+can also write the dependencies of the specified files in a format
+suitable for usage with 'make' or other makefile utilities.
+.SH OPTIONS
+.TP
+.B \-b
+For compatibility with javap only. Ignored.
+.TP
+.B \-c
+Disassemble bytecode in methods. If the source code was compiled with
+a debug option and contains a local variables table, then each
+opcode with access to local variable and/or parameters is displayed
+along with the real variable name; otherwise only the index is displayed.
+.TP
+.B \-help
+Display a short usage message. All others options are ignored.
+.TP
+.B \-l
+Ouput line number information. Only available when the -c option is set.
+If the class file contains source file information, then
+.B javel
+tries to load the source file in the current directory and display, along with
+the line number, the corresponding line.
+.TP
+.B \-public
+Show only public classes & members.
+.TP
+.B \-protected
+Show only public and protected classes & members.
+.TP
+.B \-package
+Show only public, protected and package classes & members.
+.TP
+.B \-private
+Show all classes & members.
+.TP
+.B \-s
+Print internal type signatures. Ignored.
+.TP
+.B \-verbose
+Print code size, stack size, locals and arguments size for each method.
+.TP
+.B \-classpath <path>
+For compatibility with javap only. Ignored.
+.TP
+.B \-depend
+Output depend information. All others options are ignored if this option
+is specified.
+
+.SH EXAMPLE
+To output the (almost) orinal version of all methods and members
+of the compiled java class
+.I Brol.class
+on standard output, you can type:
+
+	javel -c -verbose -private Brol.class
+
+To output dependencies of all class files in the
+.I src
+directory to the file
+.I depend.mk
+, you can type:
+
+	javel -depend src/*.class > depend.mk
+
+.SH COPYRIGHT
+.B Javel
+is free software; you can  redistribute it and/or
+modify it  under the terms  of the GNU General  Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but without any warranty; without even the implied warranty of
+merchantability or fitness  for a particular purpose.  See the
+GNU General Public License for more details.
+.SH BUGS
+The float or double conversion during the compilation from java source code
+to class file allows some precision loss on some floating point constants.
+Due to that, the disassembled float or double constants can be slightly
+different from the original constant numeric value.
+
+Some java compilers seems to have a bug in the local variable table
+generation algorithm when a variable is only used at the near end of
+its method. A variable first used on the last instruction of a method
+will not be present on the table and, as a consequence, not be included
+on the disassembled code.
+.SH AUTHOR
+Laurent Gregoire <laurent.gregoire@icam.fr>

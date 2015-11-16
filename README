@@ -1,0 +1,45 @@
+
+Javel README file
+______________________________________________________________________________
+
+Content:
+1. Installation
+2. Usage
+3. Copyright
+______________________________________________________________________________
+
+1. Installation
+
+	As usual.
+
+		$ make
+		$ su
+		$ make install
+
+	Please note that we do not use automake/autoconf for the moment.
+	Later perhaps. The make has been tested on a standard linux box
+	only. Install will copy javel onto /usr/local/bin/ and javel.1.gz
+	(the man page) onto /usr/share/man/man1/. Needs the stdc++ lib v3.
+
+2. Usage
+
+	To display a complete man page:
+
+		$ man javel
+
+	To display a quick usage reminder:
+
+		$ javel -help
+
+	To disassemble everything from a class 'Brol.class':
+
+		$ javel -private -verbose -c Brol.class
+
+3. Copyright
+
+	This program is copyright (c) 2001,2002 by Laurent Gregoire,
+	<laurent.gregoire@icam.fr>. For more informations please contact
+	the author. Javel is released under the GNU GPL (General Public
+	Licence) and can be freely redistributed under the terms of
+	this licence.
+

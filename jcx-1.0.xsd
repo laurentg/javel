@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<schema
+ targetNamespace='http://tnerual.eriogerg.free.fr/jcx-1.0'
+ xmlns:jcx='http://tnerual.eriogerg.free.fr/jcx-1.0'
+ xmlns='http://www.w3.org/2001/XMLSchema'
+ elementFormDefault='qualified'>
+
+  <!-- Documentation -->
+  <annotation>
+    <documentation>
+      Schema for JCX - Java Class in XML.
+    </documentation>
+  </annotation>
+
+  <!-- Base element definition -->
+  <element name='jcx' type='jcx:jcxType'/>
+
+  <!-- Main element definition -->
+  <complexType name='jcxType'>
+    <sequence>
+      <element name='classes' type='jcx:classListType'/>
+    </sequence>
+    <attribute name='version' type='jcx:versionType' use='required'/>
+  </complexType>
+
+  <!-- Class list definition -->
+  <complexType name='classListType'>
+    <sequence>
+      <element name='class' type='jcx:classType'
+       minOccurs='0' maxOccurs='unbounded'/>
+    </sequence>
+  </complexType>
+
+  <!-- Main class type definition -->
+  <complexType name='classType'>
+    <sequence>
+      <element name='visibility' type='jcx:visibilityType'
+       minOccurs='0' maxOccurs='1'/>
+      <element name='final' type='jcx:boolType'
+       minOccurs='0' maxOccurs='1'/>
+      <element name='static' type='jcx:boolType'
+       minOccurs='0' maxOccurs='1'/>
+      <element name='extends' type='jcx:classRefType'
+       minOccurs='0' maxOccurs='1'/>
+      <element name='implements' type='jcx:classRefType'
+       minOccurs='0' maxOccurs='unbounded'/>
+      <element name='field' type='jcx:fieldType'
+       minOccurs='0' maxOccurs='unbounded'/>
+      <element name='method' type='jcx:methodType'
+       minOccurs='0' maxOccurs='unbounded'/>
+    </sequence>
+    <attribute name='name' type='jcx:classNameType' use='required'/>
+  </complexType>
+
+  <!-- Class name definition -->
+  <simpleType name='classNameType'>
+    <restriction base='token'>
+    </restriction>
+  </simpleType>
+
+  <!-- Identifier name definition -->
+  <simpleType name='idNameType'>
+    <restriction base='token'>
+    </restriction>
+  </simpleType>
+
+  <!-- Type name definition -->
+  <simpleType name='typeNameType'>
+    <restriction base='token'>
+    </restriction>
+  </simpleType>
+
+  <!-- Value definition -->
+  <simpleType name='valueType'>
+    <restriction base='token'>
+    </restriction>
+  </simpleType>
+
+  <!-- Visibility type definition -->
+  <complexType name='visibilityType'>
+    <attribute name='value' type='jcx:visibilityValueType' default='package'/>
+  </complexType>
+
+  <!-- Class visibility values definition -->
+  <simpleType name='visibilityValueType'>
+    <restriction base='token'>
+      <enumeration value='public'/>
+      <enumeration value='package'/>
+      <enumeration value='protected'/>
+      <enumeration value='private'/>
+    </restriction>
+  </simpleType>
+
+  <!-- Empty type for tags definition -->
+  <complexType name='boolType'>
+    <attribute name='value' type='boolean' default='true'/>
+  </complexType>
+
+  <!-- Class reference definition -->
+  <complexType name='classRefType'>
+    <attribute name='class' type='jcx:classNameType' use='required'/>
+  </complexType>
+
+  <!-- Field type definition -->
+  <complexType name='fieldType'>
+    <sequence>
+      <element name='visibility' type='jcx:visibilityType'
+       minOccurs='0' maxOccurs='1'/>
+      <element name='final' type='jcx:boolType'
+       minOccurs='0' maxOccurs='1'/>
+      <element name='static' type='jcx:boolType'
+       minOccurs='0' maxOccurs='1'/>
+      <element name='value' type='jcx:valueType'
+       minOccurs='0' maxOccurs='1'/>
+    </sequence>
+    <attribute name='name' type='jcx:idNameType' use='required'/>
+    <attribute name='type' type='jcx:typeNameType' use='required'/>
+  </complexType>
+
+  <!-- Method type definition -->
+  <complexType name='methodType'>
+    <sequence>
+      <element name='visibility' type='jcx:visibilityType'
+       minOccurs='0' maxOccurs='1'/>
+      <element name='abstract' type='jcx:boolType'
+       minOccurs='0' maxOccurs='1'/>
+      <element name='static' type='jcx:boolType'
+       minOccurs='0' maxOccurs='1'/>
+      <element name='parameters' type='jcx:parameterListType'/>
+    </sequence>
+    <attribute name='name' type='jcx:idNameType' use='required'/>
+    <attribute name='type' type='jcx:typeNameType' use='required'/>
+  </complexType>
+
+  <!-- Parameter list definition -->
+  <complexType name='parameterListType'>
+    <sequence>
+      <element name='param' type='jcx:parameterType'
+       minOccurs='0' maxOccurs='unbounded'/>
+    </sequence>
+  </complexType>
+
+  <!-- Parameter definition -->
+  <complexType name='parameterType'>
+    <attribute name='name' type='jcx:idNameType' use='required'/>
+    <attribute name='type' type='jcx:typeNameType' use='required'/>
+  </complexType>
+
+  <!-- JCX version definition -->
+  <simpleType name='versionType'>
+    <restriction base='token'>
+      <enumeration value='1.0'/>
+    </restriction>
+  </simpleType>
+
+</schema>

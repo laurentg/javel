@@ -1,0 +1,27 @@
+
+Javel todo task list:
+
+1) Implement the InnerClasses attribute decoding.
+   For each class in the list, open the file and decode it (if found),
+   then output it inside the main classe.
+
+2) Implement the Synthetic attribute. Output an information if present.
+
+3) Implement the LocalVariableTable attribute. Display in the code
+   the local variable name and type, with the scope range [pc, pc+length[.
+
+4) Implement the Deprecated attribute. Output an information if present.
+
+5) Transform the long code_info::disassemble() method in a list of
+   small class calls, with a class for each opcode (with templates for
+   opcodes that are almost the same).
+
+6) Decode code and build a call tree for each method, then perform check
+   analysis on stack usage, deadcode, calling branches...
+
+7) Try to implement a *complete* code disassembler which output real
+   java instructions instead of opcodes.
+
+8) Handle real Utf-8 support with decoding to local page encoding.
+
+9) Output class file in XML format.
